@@ -48,6 +48,6 @@ public interface WebhookStore {
 	}
 
 	public static Function<Integer, Long> newRetryLimiter(long max, Function<Integer, Long> backoffFn) {
-		return (n) -> n > max ? -1 : backoffFn.apply(n);
+		return (n) -> n > max ? -1l : backoffFn.apply(n);
 	}
 }

@@ -2,6 +2,8 @@
 
 A java library with opinions and constructs for webhooks. It works as a simple asynchronous http client or a retrying service with backoff strategies.
 
+[![Build Status](https://travis-ci.org/klatunetworks/webhooks.svg?branch=master)](https://travis-ci.org/klatunetworks/webhooks)
+
 ##### Opinions
 
 * Webhooks are POST requests with JSON bodies
