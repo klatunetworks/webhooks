@@ -35,13 +35,14 @@ public class WebhookStoreTest extends TestWithMockServer {
 		ScheduledExecutorService executor = Executors.newScheduledThreadPool(2);
 		executor.scheduleAtFixedRate(store, 0, 1, TimeUnit.MILLISECONDS);
 		executor.submit(service);
-		
+
 		for (int i = 0; i < 5; i++) {
 			server.takeRequest();
 		}
+		Thread.sleep(50);
 
 		executor.shutdown();
-		
+
 		Assert.assertEquals(0, store.getQueue().size());
 		Assert.assertEquals(0, store.getDelayedWebhooks());
 	}
